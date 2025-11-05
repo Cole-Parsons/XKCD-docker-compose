@@ -10,7 +10,7 @@ A Docker Compose setup that runs the complete XKCD system — including the Go-b
 The purpose of this Repository is to assist you in running all 3 XKCD Scraper Projects simultaniously in Docker.
 ---
 # How To
-* First ensure you have downloaded all 3 projects locally in their own files.
+* First ensure you have downloaded all 3 projects locally in their own files.  
   [XKCD-Server](https://github.com/Cole-Parsons/XKCD-Scraper-HTTP-Server.git)    
   [XKCD-Client](https://github.com/Cole-Parsons/XKCD-Client.git)  
   [XKCD-Frontend](https://github.com/Cole-Parsons/XKCD-frontend.git)  
