@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  xkcd-server:
+    build:
+      context: ./Project-1
+      dockerfile: Dockerfile
+    container_name: xkcd-server
+    ports:
+      - "8080:8080"
+    networks:
+      - xkcd-net
+
+  xkcd-client:
+    build:
+      context: ./Project-2
+      dockerfile: Dockerfile
+    container_name: xkcd-client
+    depends_on:
+      - xkcd-server
+    environment:
+      - SERVER_URL=http://xkcd-server:8080
+    networks:
+      - xkcd-net
+
+  xkcd-frontend:
+    build:
+      context: ./xkcd-frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_SERVER_URL: http://xkcd-server:8080
+    container_name: xkcd-frontend
+    depends_on:
+      - xkcd-server
+    ports:
+      - "3000:80"
+    networks:
+      - xkcd-net
+
+networks:
+  xkcd-net:
+    driver: bridge
