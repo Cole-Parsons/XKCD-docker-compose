@@ -3,7 +3,7 @@ version: "3.9"
 services:
   xkcd-server:
     build:
-      context: ./Project-1
+      context: ./XKCD-Scraper-HTTP-Server
       dockerfile: Dockerfile
     container_name: xkcd-server
     ports:
@@ -13,7 +13,7 @@ services:
 
   xkcd-client:
     build:
-      context: ./Project-2
+      context: ./XKCD-Client
       dockerfile: Dockerfile
     container_name: xkcd-client
     depends_on:
@@ -25,7 +25,7 @@ services:
 
   xkcd-frontend:
     build:
-      context: ./xkcd-frontend
+      context: ./XKCD-frontend
       dockerfile: Dockerfile
       args:
         REACT_APP_SERVER_URL: http://xkcd-server:8080
@@ -39,4 +39,5 @@ services:
 
 networks:
   xkcd-net:
+
     driver: bridge
