@@ -8,8 +8,11 @@ services:
     container_name: xkcd-server
     ports:
       - "8080:8080"
+    volumes:
+      - ./comics:/comics    
     networks:
       - xkcd-net
+
 
   xkcd-client:
     build:
@@ -41,3 +44,4 @@ networks:
   xkcd-net:
 
     driver: bridge
+
