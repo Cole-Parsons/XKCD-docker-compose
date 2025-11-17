@@ -17,7 +17,7 @@ git clone https://github.com/Cole-Parsons/XKCD-Scraper-HTTP-Server
 git clone https://github.com/Cole-Parsons/XKCD-Client
 git clone https://github.com/Cole-Parsons/XKCD-frontend
 ```
-* Next put the [docker-compose file](https://github.com/Cole-Parsons/XKCD-docker-compose/blob/main/docker-compose.yml) into the parent folder. It should look like this.  
+* Next put the [docker-compose file](https://github.com/Cole-Parsons/XKCD-docker-compose/blob/main/docker-compose.yml) into the parent folder. The parent folder should look like this.  
 <pre>
 parent-folder/
 │
